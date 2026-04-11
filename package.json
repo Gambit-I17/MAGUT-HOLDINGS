@@ -1,9 +1,0 @@
-{
-  "name": "magut-holdings",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Magut Holdings Group — static website",
-  "scripts": {
-    "build": "echo \"Static site (no compilation)\""
-  }
-}
