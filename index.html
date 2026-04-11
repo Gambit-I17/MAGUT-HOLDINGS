@@ -19,13 +19,7 @@
     magut-holdings/
     ├── index.html   ← You are here (structure)
     ├── style.css    ← All styles and colours
-    ├── script.js    ← All JavaScript logic
-    ├── vercel.json  ← Vercel static deploy (framework: Other, output: .)
-    └── package.json ← No-op build for Vercel CI
-
-  DEPLOY (Vercel + GitHub):
-    Push this folder to a GitHub repo, import the repo in Vercel (Git already linked).
-    Enable Web Analytics in the Vercel project if you want the injected tracker to send data.
+    └── script.js    ← All JavaScript logic
 
   HOW TO CUSTOMISE:
     - Change company name  → Search "MAGUT HOLDINGS" in this file
@@ -253,7 +247,7 @@
 
           <!-- ── Company Card 1: Magut Farm ── -->
           <div class="pcard">
-            <div class="pcard-banner pb-farm-photo" role="img" aria-label="Dairy cattle on pasture">
+            <div class="pcard-banner pb-dark">
               <div class="pcard-logo pl-gold">MF</div>
             </div>
             <div class="pcard-body">
@@ -318,8 +312,8 @@
     ============================================================ -->
     <div class="page" id="pg-farm">
 
-      <!-- Company page header: dairy herd imagery (HD stock, Kenyan-style pastoral dairy) -->
-      <div class="company-header header-dark header-farm-photo">
+      <!-- Company page header banner -->
+      <div class="company-header header-dark">
         <div class="company-logo logo-gold">MF</div>
         <div class="company-title">Magut Farm</div>
         <div class="company-subtitle">Agriculture &amp; Livestock &middot; A Magut Holdings Company</div>
@@ -331,49 +325,6 @@
         <p class="section-sub">Magut Farm is our flagship agricultural enterprise dedicated to
            producing high-quality dairy and poultry products. The farm leverages modern techniques
            combined with sustainable farming practices to deliver fresh produce to local markets.</p>
-
-        <div class="farm-gallery" role="region" aria-label="Dairy farm photography">
-          <figure class="farm-gallery__item">
-            <img
-              src="https://images.unsplash.com/photo-1570042225831-d98fa7577c31?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2400&amp;q=88"
-              srcset="https://images.unsplash.com/photo-1570042225831-d98fa7577c31?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=88 1200w,
-                      https://images.unsplash.com/photo-1570042225831-d98fa7577c31?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1800&amp;q=88 1800w,
-                      https://images.unsplash.com/photo-1570042225831-d98fa7577c31?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2400&amp;q=88 2400w"
-              sizes="(max-width: 900px) 100vw, 33vw"
-              width="2400"
-              height="1600"
-              alt="Dairy cattle grazing on green pasture at a farm"
-              loading="eager"
-              decoding="async" />
-          </figure>
-          <figure class="farm-gallery__item">
-            <img
-              src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2400&amp;q=88"
-              srcset="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=88 1200w,
-                      https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1800&amp;q=88 1800w,
-                      https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2400&amp;q=88 2400w"
-              sizes="(max-width: 900px) 100vw, 33vw"
-              width="2400"
-              height="1600"
-              alt="Aerial view of cattle herd spread across farmland and pasture"
-              loading="lazy"
-              decoding="async" />
-          </figure>
-          <figure class="farm-gallery__item">
-            <img
-              src="https://images.unsplash.com/photo-1527153859715-f23029b9b7a8?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2400&amp;q=88"
-              srcset="https://images.unsplash.com/photo-1527153859715-f23029b9b7a8?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=88 1200w,
-                      https://images.unsplash.com/photo-1527153859715-f23029b9b7a8?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1800&amp;q=88 1800w,
-                      https://images.unsplash.com/photo-1527153859715-f23029b9b7a8?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2400&amp;q=88 2400w"
-              sizes="(max-width: 900px) 100vw, 33vw"
-              width="2400"
-              height="1600"
-              alt="Holstein dairy cows in a grassy paddock"
-              loading="lazy"
-              decoding="async" />
-          </figure>
-        </div>
-        <p class="farm-photo-credit">Farm scenes shown for illustration. High-resolution photos licensed for use via <a href="https://unsplash.com" rel="noopener noreferrer" target="_blank">Unsplash</a>.</p>
 
         <div class="grid3">
           <div class="card">
@@ -940,19 +891,6 @@
 
   <!-- Load JavaScript last (after all HTML has loaded) -->
   <script src="script.js"></script>
-
-  <!-- Vercel Web Analytics: enable in Vercel → Project → Analytics. Skips localhost / file URLs. -->
-  <script>
-    (function () {
-      var h = location.hostname;
-      if (!h || h === 'localhost' || h === '127.0.0.1') return;
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-      var s = document.createElement('script');
-      s.defer = true;
-      s.src = '/_vercel/insights/script.js';
-      document.head.appendChild(s);
-    })();
-  </script>
 
 </body>
 </html>
